@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>精益道场物品管理系统</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- 登录视图 -->
+  <div id="login-view" class="login-wrap hidden">
+    <div class="login-card">
+      <div class="login-logo">精益道场</div>
+      <h1>物品管理系统</h1>
+      <p class="login-sub">精益智造研训中心</p>
+      <form id="login-form">
+        <label>用户名</label>
+        <input type="text" id="login-username" autocomplete="username" required>
+        <label>密码</label>
+        <input type="password" id="login-password" autocomplete="current-password" required>
+        <div id="login-error" class="error-text"></div>
+        <button type="submit" class="btn btn-primary btn-block">登 录</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 主视图 -->
+  <div id="main-view" class="hidden">
+    <header class="topbar">
+      <div class="topbar-title">精益道场物品管理系统</div>
+      <div class="topbar-user">
+        <span id="current-user"></span>
+        <span id="current-role" class="role-badge"></span>
+        <button id="btn-logout" class="btn btn-text">退出登录</button>
+      </div>
+    </header>
+    <nav id="tabs" class="tabs"></nav>
+    <main id="content" class="content"></main>
+  </div>
+
+  <!-- 弹窗 -->
+  <div id="modal-mask" class="modal-mask hidden">
+    <div class="modal">
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-actions" id="modal-actions"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
