@@ -1,0 +1,15 @@
+# Render Blueprint：一键创建 Web 服务
+# DATABASE_URL 部署时在页面填入（Neon 连接串），SESSION_SECRET 自动生成
+services:
+  - type: web
+    name: dojo-ims
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
